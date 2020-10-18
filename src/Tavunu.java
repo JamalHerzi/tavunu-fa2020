@@ -7,8 +7,15 @@
  * pava -- items of status used for bargaining.
  *
  * @author Mithat Konar
- * @author Your Name
+ * @author Jamal Herzi
  */
 public class Tavunu {
-    /* See readme.md for what to do. */
+    public String name;
+    public int birth;
+    public int age;
+    
+    public void TavunuOutput(){
+        System.out.println(name + ", " + birth + ", " + age);
+    } 
+            
 }
