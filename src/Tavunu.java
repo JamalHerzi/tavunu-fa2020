@@ -10,12 +10,12 @@
  * @author Jamal Herzi
  */
 public class Tavunu {
-    public String name;
-    public int birth;
-    public int age;
+    public String name, c;
+    public int birthYear;
+    public int pava;
     
     public void TavunuOutput(){
-        System.out.println(name + ", " + birth + ", " + age);
+        System.out.println(name + " born in " + birthYear + " is an " + c + " with " + pava + " pava.");
     } 
             
 }
