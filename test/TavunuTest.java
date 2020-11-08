@@ -8,23 +8,34 @@ import static org.junit.Assert.*;
  */
 public class TavunuTest {
 
-    /**
+    class TavunuConcrete extends Tavunu {
+
+        TavunuConcrete() {
+            super();
+        }
+        
+        TavunuConcrete(String name, int birthYear, int pava) {
+            super(name, birthYear, pava);
+        }
+    };
+    
+    /*
      * Also tests accessors.
      */
     @Test
     public void testCtorNoArg() {
-        var tv = new Tavunu();
+        var tv = new TavunuConcrete();
         assertEquals(tv.getName(), "");
         assertEquals(tv.getPava(), 0);
         assertEquals(tv.getBirthYear(), Integer.MIN_VALUE);
     }
 
-    /**
+    /*
      * Also tests accessors.
      */
     @Test
     public void testCtorParams() {
-        var tv = new Tavunu("Dease", 1944, 42);
+        var tv = new TavunuConcrete("Dease", 1944, 42);
         assertEquals(tv.getName(), "Dease");
         assertEquals(tv.getPava(), 42);
         assertEquals(tv.getBirthYear(), 1944);
@@ -32,14 +43,14 @@ public class TavunuTest {
 
     @Test
     public void testToString() {
-        var tv = new Tavunu("Dease", 1944, 42);
-        
+        var tv = new TavunuConcrete("Dease", 1944, 42);
+
         assertEquals("" + tv, "Dease born in 1944 has 42 pava.");
     }
-    
+
     @Test
     public void testSetName() {
-        var tv = new Tavunu();
+        var tv = new TavunuConcrete();
 
         tv.setName("");
         assertEquals(tv.getName(), "");
@@ -68,7 +79,7 @@ public class TavunuTest {
 
     @Test
     public void testSetYear() {
-        var tv = new Tavunu("Dease", 1944, 42);
+        var tv = new TavunuConcrete("Dease", 1944, 42);
 
         tv.setBirthYear(-2001);
         assertEquals(tv.getBirthYear(), -2001);
@@ -82,7 +93,7 @@ public class TavunuTest {
 
     @Test
     public void testReceivePava() {
-        var tv = new Tavunu("Dease", 1944, 42);
+        var tv = new TavunuConcrete("Dease", 1944, 42);
 
         boolean rv = tv.receivePava(-2001);
         assertEquals(tv.getPava(), 42);
@@ -107,7 +118,7 @@ public class TavunuTest {
 
     @Test
     public void testSpendPava() {
-        var tv = new Tavunu("Dease", 1944, 42);
+        var tv = new TavunuConcrete("Dease", 1944, 42);
 
         boolean rv = tv.spendPava(-2001);
         assertEquals(tv.getPava(), 42);
